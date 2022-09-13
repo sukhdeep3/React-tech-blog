@@ -12,6 +12,36 @@ text-align: center;
 const PostSubTitle = styled.p`
 font-size: 13px;`;
 
+const Post = styled.div`
+  border: 1px solid #e1e1e1;
+  padding: 10px 10px;
+  border-radius: 5px;
+  margin-top: 10px;
+  
+  &:hover{
+    border: 1px solid blue;
+  }
+
+  h3{
+    margin: 0;
+    padding: 0;
+    font-size: 25px;
+    font-weight: bold;
+    color: #9c9c9c;
+  }
+
+  a{
+    text-decoration: none;
+  }
+
+  @media( max-width: 800px) {
+    border: 1px solid black;
+  }
+  `;
+
+// const LinkTag = styled.anchor`
+// color: yellow`;
+
 function Home() {
   const [posts, setPosts]= useState([]);
 
@@ -36,14 +66,15 @@ function Home() {
 
     {/* <button className="createPostBtn">Home</button> */}
     <div id='blog-by'>Sukhdeep</div>
+    {/* <LinkTag href='#'>Hello</LinkTag> */}
 
     {posts.map((post , index)=>(
-      <div className="post" key={`post-${index}`}>
+      <Post className="post" key={`post-${index}`}>
         <Link to={`/post/${post.id}`}>
           <h3>{post.title}</h3>
         </Link>
         <PostSubTitle>{post.subTitle}</PostSubTitle>
-      </div>
+      </Post>
     ))}
   </div>;
 }
