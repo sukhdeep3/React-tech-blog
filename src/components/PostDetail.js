@@ -9,7 +9,10 @@ function PostDetail() {
   const {postId} = useParams();
  
   useEffect(()=>{
-    firestore.collection('posts').doc(postId).get().then((snapshot)=>{
+    firestore
+    .collection('posts')
+    .doc(postId).get()
+    .then((snapshot)=>{
       console.log('snapshot', snapshot.data());
       setPost(snapshot.data())
     })

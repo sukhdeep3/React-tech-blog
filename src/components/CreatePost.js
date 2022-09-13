@@ -1,9 +1,26 @@
 import { useState } from "react";
+import { css } from "styled-components";
 import {firestore} from '../firebase';
 import {useFormInput} from '../hooks';
-import classes from './Button.module.css';
-function CreatePost() {
+import styled from 'styled-components';
+// import classes from './Button.module.css';
 
+const StyledButton =styled.button`
+    height: 33px;
+    background-color: ${(props)=> (props.primary ? '#4caf50' : 'blue')};
+    border: 0;
+    color: #fff;
+    padding: 8px;
+    font-size: 15px;
+    border-radius: 3px;
+    cursor: pointer;
+    ${(props)=> css`
+    border: 4px solid ${props.bgColor};
+    `}
+    `;
+
+
+function CreatePost() {
   const title=useFormInput('');
    const content=useFormInput('');
    const subTitle=useFormInput('');
@@ -48,7 +65,8 @@ function handleSubmit(e){
         {...content}></textarea>
       </div>
 
-      <button className={classes.createPostBtn}>Create Post</button>
+      <StyledButton primary bgColor='blue'>Create Post</StyledButton>
+      {/* <StyledButton>Create Post</StyledButton> */}
     </form>
   </div>
   );
