@@ -17,9 +17,10 @@ const Post = styled.div`
   padding: 10px 10px;
   border-radius: 5px;
   margin-top: 10px;
+  background-color: rgb(247, 244, 244);
   
   &:hover{
-    border: 1px solid blue;
+    border: 1px solid darkred;
   }
 
   h3{
@@ -27,7 +28,7 @@ const Post = styled.div`
     padding: 0;
     font-size: 25px;
     font-weight: bold;
-    color: #9c9c9c;
+    color: darkred;
   }
 
   a{
