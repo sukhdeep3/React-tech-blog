@@ -1,7 +1,6 @@
 import React from 'react';
 import {StyleRoot} from 'radium';
 import { Routes, Route } from 'react-router-dom';
-// import { Navbar, Home, CreatePost, PostDetail } from './';
 import Navbar from './Navbar';
 import PostDetail from './PostDetail';
 import Home from './Home';
