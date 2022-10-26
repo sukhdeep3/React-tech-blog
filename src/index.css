@@ -94,8 +94,6 @@ code {
   text-decoration: none;
 }
 
-/* @media (max-width: 800px) {
-  .post {
-    border: 1px solid black;
-  }
-}  */
+.postSub-Title{
+  color: grey;
+}

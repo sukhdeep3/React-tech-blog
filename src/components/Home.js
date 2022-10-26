@@ -11,7 +11,7 @@ function Home() {
       .get()
       .then((snapshot) => {
         const posts = snapshot.docs.map((doc) => {
-          console.log("data", doc.data());
+          // console.log("data", doc.data());
           return {
             id: doc.id,
             ...doc.data(),

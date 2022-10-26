@@ -1,9 +1,7 @@
-import { useState } from "react";
 import { css } from "styled-components";
 import { firestore } from "../firebase";
 import { useFormInput } from "../hooks";
 import styled from "styled-components";
-// import classes from './Button.module.css';
 
 const StyledButton = styled.button`
   height: 33px;
@@ -15,9 +13,9 @@ const StyledButton = styled.button`
   border-radius: 6px;
   cursor: pointer;
   // ${(props) => css`
-    // border: 4px solid ${props.bgColor};
-    //
-  `}
+  //   border: 4px solid ${props.bgColor};
+    
+  // `}
 `;
 
 function CreatePost() {
@@ -27,10 +25,6 @@ function CreatePost() {
 
   function handleSubmit(e) {
     e.preventDefault();
-
-    // console.log("title", title);
-    // console.log("subTitle", subTitle);
-    // console.log("content", content);
 
     firestore.collection("posts").add({
       title: title.value,

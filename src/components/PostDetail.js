@@ -14,10 +14,9 @@ function PostDetail() {
       .doc(postId)
       .get()
       .then((snapshot) => {
-        console.log("snapshot", snapshot.data());
         setPost(snapshot.data());
       });
-  }, []);
+  }, [postId]);
 
   return (
     <div className="post-detail">
@@ -32,9 +31,10 @@ export default Radium(PostDetail);
 const styles = {
   postDetails: {
     border: "1px solid #e1e1e1",
-    padding: 10,
+    padding: 15,
     borderRadius: 5,
-    backgroundColor: "rgb(244, 244, 244)",
+    backgroundColor: "lightgrey",
+    fontSize: 20,
 
     "@media(max-width: 720px)": {
       color: "blue",
@@ -43,10 +43,11 @@ const styles = {
   },
   heading: {
     textAlign: "center",
+    color: 'darkred',
     margin: 0,
+
     ":hover": {
       fontSize: 40,
-      color: "red",
       cursor: "pointer",
     },
   },
